@@ -1,0 +1,108 @@
+<body class="bg-cyan-200">
+  {{> app}}
+</body>
+
+<template name="app">
+  <div class="flex justify-center items-center h-screen w-full">
+    <div class="p-7 bg-white shadow-2xl rounded-xl flex gap-2 w-3/5">
+      <div class="w-2/4 p-5">
+        <div class="mb-5">
+          <p class="font-bold mb-2">Bill</p>
+          <div class="flex bg-gray-200 p-2 rounded-lg gap-2">
+            <p class="text-gray-400">$</p>
+            <input
+              type="number"
+              id="amount"
+              class="outline-none w-full text-right bg-transparent text-xl"
+              value="{{amount}}"
+            />
+          </div>
+        </div>
+        <div class="mb-5">
+          <p class="font-bold mb-2">Select Tip %</p>
+          <div class="flex flex-col gap-2">
+            <div class="flex gap-2">
+              <button
+                class="tip w-2/6 bg-teal-800 text-white p-2 rounded-lg"
+                data-percentage="5"
+              >
+                5%
+              </button>
+              <button
+                class="tip w-2/6 bg-teal-800 text-white p-2 rounded-lg"
+                data-percentage="10"
+              >
+                10%
+              </button>
+              <button
+                class="tip w-2/6 bg-teal-800 text-white p-2 rounded-lg"
+                data-percentage="15"
+              >
+                15%
+              </button>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="tip w-2/6 bg-teal-800 text-white p-2 rounded-lg"
+                data-percentage="25"
+              >
+                25%
+              </button>
+              <button
+                class="tip w-2/6 bg-teal-800 text-white p-2 rounded-lg"
+                data-percentage="50"
+              >
+                50%
+              </button>
+              <input
+                class="tip w-2/6 bg-gray-300 p-2 rounded-lg outline-none"
+                type="number"
+                placeholder="Custom"
+                id="customTip"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="mb-5">
+          <p class="font-bold mb-2">Number of people</p>
+          <div class="flex bg-gray-200 p-2 rounded-lg gap-2">
+            <p class="text-gray-400">$</p>
+            <input
+              type="number"
+              id="people"
+              class="outline-none w-full text-right bg-transparent text-xl"
+              value="{{people}}"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="w-2/4 flex flex-col bg-teal-800 rounded-xl p-7">
+        <div class="w-full h-full">
+          <div class="flex gap-2 mb-5">
+            <div class="flex flex-col w-5/12">
+              <p class="text-white text-lg">Tip Amount</p>
+              <p class="text-sm text-gray-400">/ person</p>
+            </div>
+            <div class="w-7/12 flex justify-end">
+              <p class="text-teal-500 font-bold text-4xl">${{tipAmount}}</p>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <div class="flex flex-col w-5/12">
+              <p class="text-white text-lg">Total</p>
+              <p class="text-sm text-gray-400">/ person</p>
+            </div>
+            <div class="w-7/12 flex justify-end">
+              <p class="text-teal-500 font-bold text-4xl">${{total}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <button id="reset" class="w-full bg-teal-500 font-bold p-2">
+            RESET
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
